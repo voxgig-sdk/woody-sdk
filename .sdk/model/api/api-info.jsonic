@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://woody.cat"
+      }
+      description: "Provides access to random woody images and information through a REST API."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://woody.cat"
+        }
+      ]
+      title: "Woody API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

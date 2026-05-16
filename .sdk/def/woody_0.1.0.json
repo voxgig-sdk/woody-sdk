@@ -1,0 +1,150 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Woody API",
+    "description": "Provides access to random woody images and information through a REST API.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://woody.cat"
+    }
+  },
+  "externalDocs": {
+    "description": "API Documentation",
+    "url": "https://woody.cat"
+  },
+  "servers": [
+    {
+      "url": "https://woody.cat",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/random": {
+      "get": {
+        "summary": "Get random Woody",
+        "description": "Returns a random Woody image and information",
+        "operationId": "getRandomWoody",
+        "tags": [
+          "Woody"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with random Woody data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WoodyResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/{id}": {
+      "get": {
+        "summary": "Get specific Woody by ID",
+        "description": "Returns a specific Woody image and information by its ID",
+        "operationId": "getWoodyById",
+        "tags": [
+          "Woody"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the Woody to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with Woody data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WoodyResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Woody not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "WoodyResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the Woody"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the Woody image"
+          },
+          "permalink": {
+            "type": "string",
+            "format": "uri",
+            "description": "Permanent link to this Woody"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "message": {
+            "type": "string",
+            "description": "Detailed error description"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Woody",
+      "description": "Operations related to Woody images"
+    }
+  ]
+}

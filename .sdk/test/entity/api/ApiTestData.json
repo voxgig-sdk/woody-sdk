@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "api": {
+      "API00": {
+        "id": "API00",
+        "permalink": "s1f",
+        "url": "s20"
+      },
+      "API01": {
+        "id": "API01",
+        "permalink": "s3d",
+        "url": "s3e"
+      },
+      "API02": {
+        "id": "API02",
+        "permalink": "s5b",
+        "url": "s5c"
+      }
+    }
+  },
+  "new": {
+    "api": {
+      "api_ref01": {
+        "permalink": "s79",
+        "url": "s7a"
+      }
+    }
+  }
+}

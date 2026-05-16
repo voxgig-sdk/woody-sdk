@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "random": {
+      "RANDOM00": {
+        "id": "RANDOM00",
+        "permalink": "s1f",
+        "url": "s20"
+      },
+      "RANDOM01": {
+        "id": "RANDOM01",
+        "permalink": "s3d",
+        "url": "s3e"
+      },
+      "RANDOM02": {
+        "id": "RANDOM02",
+        "permalink": "s5b",
+        "url": "s5c"
+      }
+    }
+  },
+  "new": {
+    "random": {
+      "random_ref01": {
+        "permalink": "s79",
+        "url": "s7a"
+      }
+    }
+  }
+}

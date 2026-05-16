@@ -1,0 +1,67 @@
+<?php
+declare(strict_types=1);
+
+// Woody SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+WoodyUtility::setRegistrar(function (WoodyUtility $u): void {
+    $u->clean = [WoodyClean::class, 'call'];
+    $u->done = [WoodyDone::class, 'call'];
+    $u->make_error = [WoodyMakeError::class, 'call'];
+    $u->feature_add = [WoodyFeatureAdd::class, 'call'];
+    $u->feature_hook = [WoodyFeatureHook::class, 'call'];
+    $u->feature_init = [WoodyFeatureInit::class, 'call'];
+    $u->fetcher = [WoodyFetcher::class, 'call'];
+    $u->make_fetch_def = [WoodyMakeFetchDef::class, 'call'];
+    $u->make_context = [WoodyMakeContext::class, 'call'];
+    $u->make_options = [WoodyMakeOptions::class, 'call'];
+    $u->make_request = [WoodyMakeRequest::class, 'call'];
+    $u->make_response = [WoodyMakeResponse::class, 'call'];
+    $u->make_result = [WoodyMakeResult::class, 'call'];
+    $u->make_point = [WoodyMakePoint::class, 'call'];
+    $u->make_spec = [WoodyMakeSpec::class, 'call'];
+    $u->make_url = [WoodyMakeUrl::class, 'call'];
+    $u->param = [WoodyParam::class, 'call'];
+    $u->prepare_auth = [WoodyPrepareAuth::class, 'call'];
+    $u->prepare_body = [WoodyPrepareBody::class, 'call'];
+    $u->prepare_headers = [WoodyPrepareHeaders::class, 'call'];
+    $u->prepare_method = [WoodyPrepareMethod::class, 'call'];
+    $u->prepare_params = [WoodyPrepareParams::class, 'call'];
+    $u->prepare_path = [WoodyPreparePath::class, 'call'];
+    $u->prepare_query = [WoodyPrepareQuery::class, 'call'];
+    $u->result_basic = [WoodyResultBasic::class, 'call'];
+    $u->result_body = [WoodyResultBody::class, 'call'];
+    $u->result_headers = [WoodyResultHeaders::class, 'call'];
+    $u->transform_request = [WoodyTransformRequest::class, 'call'];
+    $u->transform_response = [WoodyTransformResponse::class, 'call'];
+});
