@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/woody-sdk"
-	"github.com/voxgig-sdk/woody-sdk/core"
+	sdk "github.com/voxgig-sdk/woody-sdk/go"
+	"github.com/voxgig-sdk/woody-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/woody-sdk/go/utility/struct"
 )
 
 func TestRandomEntity(t *testing.T) {

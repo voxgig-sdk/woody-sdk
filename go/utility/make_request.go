@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/woody-sdk/core"
+import "github.com/voxgig-sdk/woody-sdk/go/core"
 
 func makeRequestUtil(ctx *core.Context) (*core.Response, error) {
 	if ctx.Out["request"] != nil {

@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/woody-sdk"
-	"github.com/voxgig-sdk/woody-sdk/core"
+	sdk "github.com/voxgig-sdk/woody-sdk/go"
+	"github.com/voxgig-sdk/woody-sdk/go/core"
 )
 
 func TestApiDirect(t *testing.T) {

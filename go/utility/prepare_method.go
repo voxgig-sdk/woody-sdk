@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/woody-sdk/core"
+import "github.com/voxgig-sdk/woody-sdk/go/core"
 
 func prepareMethodUtil(ctx *core.Context) string {
 	opname := ctx.Op.Name

@@ -1,10 +1,10 @@
 package voxgigwoodysdk
 
 import (
-	"github.com/voxgig-sdk/woody-sdk/core"
-	"github.com/voxgig-sdk/woody-sdk/entity"
-	"github.com/voxgig-sdk/woody-sdk/feature"
-	_ "github.com/voxgig-sdk/woody-sdk/utility"
+	"github.com/voxgig-sdk/woody-sdk/go/core"
+	"github.com/voxgig-sdk/woody-sdk/go/entity"
+	"github.com/voxgig-sdk/woody-sdk/go/feature"
+	_ "github.com/voxgig-sdk/woody-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

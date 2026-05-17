@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/woody-sdk/core"
+	"github.com/voxgig-sdk/woody-sdk/go/core"
 )
 
 type BaseFeature struct {
