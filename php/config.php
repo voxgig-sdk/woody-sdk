@@ -20,9 +20,6 @@ class WoodyConfig
             ],
             "options" => [
                 "base" => "https://woody.cat",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

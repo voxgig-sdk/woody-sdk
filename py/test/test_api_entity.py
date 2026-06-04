@@ -95,7 +95,6 @@ def _api_basic_setup(extra):
         "WOODY_TEST_API_ENTID": idmap,
         "WOODY_TEST_LIVE": "FALSE",
         "WOODY_TEST_EXPLAIN": "FALSE",
-        "WOODY_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -106,7 +105,6 @@ def _api_basic_setup(extra):
     if env.get("WOODY_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("WOODY_APIKEY"),
             },
             extra or {},
         ])

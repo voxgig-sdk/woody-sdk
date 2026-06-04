@@ -59,14 +59,12 @@ def _random_direct_setup(mockres):
     env = runner.env_override({
         "WOODY_TEST_RANDOM_ENTID": {},
         "WOODY_TEST_LIVE": "FALSE",
-        "WOODY_APIKEY": "NONE",
     })
 
     live = env.get("WOODY_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("WOODY_APIKEY"),
         }
         client = WoodySDK(merged_opts)
         return {

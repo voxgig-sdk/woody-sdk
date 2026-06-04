@@ -67,14 +67,12 @@ function random_direct_setup($mockres)
     $env = Runner::env_override([
         "WOODY_TEST_RANDOM_ENTID" => [],
         "WOODY_TEST_LIVE" => "FALSE",
-        "WOODY_APIKEY" => "NONE",
     ]);
 
     $live = $env["WOODY_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["WOODY_APIKEY"],
         ];
         $client = new WoodySDK($merged_opts);
         return [

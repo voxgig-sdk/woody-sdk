@@ -117,14 +117,12 @@ func apiDirectSetup(mockres any) *apiDirectSetupResult {
 	env := envOverride(map[string]any{
 		"WOODY_TEST_API_ENTID": map[string]any{},
 		"WOODY_TEST_LIVE":    "FALSE",
-		"WOODY_APIKEY":       "NONE",
 	})
 
 	live := env["WOODY_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["WOODY_APIKEY"],
 		}
 		client := sdk.NewWoodySDK(mergedOpts)
 

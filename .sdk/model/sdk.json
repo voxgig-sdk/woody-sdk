@@ -16,7 +16,16 @@
           }
         ],
         "title": "Woody API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Fetch random photos of Woody the cat over a tiny CORS-enabled REST API",
+        "homepage": "https://woody.cat",
+        "docs_url": "https://woody.cat",
+        "about_md": "Woody API is a small public REST service that serves photos of Woody, a cat. It is hosted at [woody.cat](https://woody.cat) and exposes its image endpoints under the `purr.woody.cat` subdomain.\n\nWhat you get from the API:\n\n- A random Woody photo via `GET https://purr.woody.cat`\n- A specific photo by ID via `GET https://purr.woody.cat/{id}` (for example, `GET https://purr.woody.cat/1`)\n\nBoth endpoints are CORS-enabled, so the service can be called directly from browser-side code. According to the [freepublicapis.com listing](https://freepublicapis.com/woody-api), the API requires no authentication and has been reliably available with sub-second response times.",
+        "entity_desc": {
+          "api": "Top-level grouping for the Woody photo service hosted at `https://purr.woody.cat`.",
+          "random": "A randomly selected Woody photo returned by `GET https://purr.woody.cat`, or a specific one via `GET https://purr.woody.cat/{id}`."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -24,7 +33,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "api": {
