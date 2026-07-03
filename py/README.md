@@ -10,7 +10,7 @@ The Python SDK for the Woody API — an entity-oriented client following Pythoni
 
 ## Install
 ```bash
-pip install woody-sdk
+pip install voxgig-sdk-woody
 ```
 
 Or install from source:

@@ -10,13 +10,13 @@ The Ruby SDK for the Woody API — an entity-oriented client using idiomatic Rub
 
 ## Install
 ```bash
-gem install woody-sdk
+gem install voxgig-sdk-woody
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "woody-sdk"
+gem "voxgig-sdk-woody"
 ```
 
 Then run:

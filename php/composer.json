@@ -1,8 +1,17 @@
 {
   "name": "voxgig-sdk/woody",
-  "description": "Woody SDK for PHP",
+  "description": "Unofficial generated PHP SDK for the Woody public API. Not affiliated with or endorsed by the upstream API provider.",
   "type": "library",
+  "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "woody"],
+  "homepage": "https://github.com/voxgig-sdk/woody-sdk",
   "license": "MIT",
+  "authors": [
+    { "name": "Voxgig", "homepage": "https://voxgig.com" }
+  ],
+  "support": {
+    "issues": "https://github.com/voxgig-sdk/woody-sdk/issues",
+    "source": "https://github.com/voxgig-sdk/woody-sdk"
+  },
   "minimum-stability": "stable",
   "require": {
     "php": ">=8.2"

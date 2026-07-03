@@ -8,12 +8,14 @@ source = {
   dir = "woody-sdk/lua"
 }
 description = {
-  summary = "Woody SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Woody public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/woody-sdk",
+  issues_url = "https://github.com/voxgig-sdk/woody-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "woody" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

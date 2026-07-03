@@ -10,7 +10,7 @@ The Lua SDK for the Woody API — an entity-oriented client using Lua convention
 
 ## Install
 ```bash
-luarocks install woody-sdk
+luarocks install voxgig-sdk-woody
 ```
 
 If the module is not yet published, add the source directory to

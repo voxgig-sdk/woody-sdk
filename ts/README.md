@@ -10,7 +10,7 @@ The TypeScript SDK for the Woody API — a type-safe, entity-oriented client wit
 
 ## Install
 ```bash
-npm install woody
+npm install @voxgig-sdk/woody
 ```
 ## Tutorial: your first API call
 
