@@ -1,19 +1,8 @@
 # Woody SDK
 
-Fetch random photos of Woody the cat over a tiny CORS-enabled REST API
+Woody API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Woody API
-
-Woody API is a small public REST service that serves photos of Woody, a cat. It is hosted at [woody.cat](https://woody.cat) and exposes its image endpoints under the `purr.woody.cat` subdomain.
-
-What you get from the API:
-
-- A random Woody photo via `GET https://purr.woody.cat`
-- A specific photo by ID via `GET https://purr.woody.cat/{id}` (for example, `GET https://purr.woody.cat/1`)
-
-Both endpoints are CORS-enabled, so the service can be called directly from browser-side code. According to the [freepublicapis.com listing](https://freepublicapis.com/woody-api), the API requires no authentication and has been reliably available with sub-second response times.
 
 ## Try it
 
@@ -47,27 +36,31 @@ gem install woody-sdk
 luarocks install woody-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { WoodySDK } from 'woody'
 
-const client = new WoodySDK({})
+const client = new WoodySDK({
+  apikey: process.env.WOODY_APIKEY,
+})
 
+// Load api data
+const api = await client.Api().load({})
+console.log(api.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -97,8 +90,8 @@ The API exposes 2 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Api** | Top-level grouping for the Woody photo service hosted at `https://purr.woody.cat`. | `/api/{id}` |
-| **Random** | A randomly selected Woody photo returned by `GET https://purr.woody.cat`, or a specific one via `GET https://purr.woody.cat/{id}`. | `/api/random` |
+| **Api** |  | `/api/{id}` |
+| **Random** |  | `/api/random` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -108,15 +101,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from woody_sdk import WoodySDK
 
-client = WoodySDK({})
+client = WoodySDK({
+    "apikey": os.environ.get("WOODY_APIKEY"),
+})
 
 
 # Load a specific api
-api, err = client.Api(None).load(
-    {"id": "example_id"}, None
-)
+api, err = client.Api().load({"id": "example_id"})
+print(api)
 ```
 
 ### PHP
@@ -125,13 +120,14 @@ api, err = client.Api(None).load(
 <?php
 require_once 'woody_sdk.php';
 
-$client = new WoodySDK([]);
+$client = new WoodySDK([
+    "apikey" => getenv("WOODY_APIKEY"),
+]);
 
 
 // Load a specific api
-[$api, $err] = $client->Api(null)->load(
-    ["id" => "example_id"], null
-);
+[$api, $err] = $client->Api()->load(["id" => "example_id"]);
+print_r($api);
 ```
 
 ### Golang
@@ -139,8 +135,13 @@ $client = new WoodySDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/woody-sdk/go"
 
-client := sdk.NewWoodySDK(map[string]any{})
+client := sdk.NewWoodySDK(map[string]any{
+    "apikey": os.Getenv("WOODY_APIKEY"),
+})
 
+// Load api data
+api, err := client.Api(nil).Load(map[string]any{}, nil)
+fmt.Println(api)
 ```
 
 ### Ruby
@@ -148,13 +149,14 @@ client := sdk.NewWoodySDK(map[string]any{})
 ```ruby
 require_relative "Woody_sdk"
 
-client = WoodySDK.new({})
+client = WoodySDK.new({
+  "apikey" => ENV["WOODY_APIKEY"],
+})
 
 
 # Load a specific api
-api, err = client.Api(nil).load(
-  { "id" => "example_id" }, nil
-)
+api, err = client.Api().load({ "id" => "example_id" })
+puts api
 ```
 
 ### Lua
@@ -162,13 +164,14 @@ api, err = client.Api(nil).load(
 ```lua
 local sdk = require("woody_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("WOODY_APIKEY"),
+})
 
 
 -- Load a specific api
-local api, err = client:Api(nil):load(
-  { id = "example_id" }, nil
-)
+local api, err = client:Api():load({ id = "example_id" })
+print(api)
 ```
 
 ## Unit testing in offline mode
@@ -187,25 +190,21 @@ const result = await client.Api().load({ id: 'test01' })
 ### Python
 
 ```python
-client = WoodySDK.test(None, None)
-result, err = client.Api(None).load(
-    {"id": "test01"}, None
-)
+client = WoodySDK.test()
+result, err = client.Api().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = WoodySDK::test(null, null);
-[$result, $err] = $client->Api(null)->load(
-    ["id" => "test01"], null
-);
+$client = WoodySDK::test();
+[$result, $err] = $client->Api()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Api(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -214,19 +213,15 @@ result, err := client.Api(nil).Load(
 ### Ruby
 
 ```ruby
-client = WoodySDK.test(nil, nil)
-result, err = client.Api(nil).load(
-  { "id" => "test01" }, nil
-)
+client = WoodySDK.test
+result, err = client.Api().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Api(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Api():load({ id = "test01" })
 ```
 
 ## How it works
@@ -330,10 +325,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Woody API
-
-- Upstream: [https://woody.cat](https://woody.cat)
 
 ---
 

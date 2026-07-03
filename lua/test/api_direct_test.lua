@@ -72,12 +72,14 @@ function api_direct_setup(mockres)
   local env = runner.env_override({
     ["WOODY_TEST_API_ENTID"] = {},
     ["WOODY_TEST_LIVE"] = "FALSE",
+    ["WOODY_APIKEY"] = "NONE",
   })
 
   local live = env["WOODY_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["WOODY_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

@@ -80,12 +80,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'WOODY_TEST_API_ENTID': {},
     'WOODY_TEST_LIVE': 'FALSE',
+    'WOODY_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.WOODY_TEST_LIVE
 
   if (live) {
     const client = new WoodySDK({
+      apikey: env.WOODY_APIKEY,
     })
 
     let idmap: any = env['WOODY_TEST_API_ENTID']

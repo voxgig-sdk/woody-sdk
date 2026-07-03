@@ -123,6 +123,7 @@ func apiBasicSetup(extra map[string]any) *entityTestSetup {
 		"WOODY_TEST_API_ENTID": idmap,
 		"WOODY_TEST_LIVE":      "FALSE",
 		"WOODY_TEST_EXPLAIN":   "FALSE",
+		"WOODY_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["WOODY_TEST_API_ENTID"])
@@ -133,6 +134,7 @@ func apiBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["WOODY_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["WOODY_APIKEY"],
 			},
 			extra,
 		})
