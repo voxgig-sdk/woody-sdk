@@ -51,8 +51,7 @@ class TestRandomEntity:
         random_ref01_match_dt0 = {
             "id": random_ref01_data["id"],
         }
-        random_ref01_data_dt0_loaded, err = random_ref01_ent.load(random_ref01_match_dt0, None)
-        assert err is None
+        random_ref01_data_dt0_loaded = random_ref01_ent.load(random_ref01_match_dt0, None)
         random_ref01_data_dt0_load_result = helpers.to_map(random_ref01_data_dt0_loaded)
         assert random_ref01_data_dt0_load_result is not None
         assert random_ref01_data_dt0_load_result["id"] == random_ref01_data["id"]
@@ -95,7 +94,6 @@ def _random_basic_setup(extra):
         "WOODY_TEST_RANDOM_ENTID": idmap,
         "WOODY_TEST_LIVE": "FALSE",
         "WOODY_TEST_EXPLAIN": "FALSE",
-        "WOODY_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -106,7 +104,6 @@ def _random_basic_setup(extra):
     if env.get("WOODY_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("WOODY_APIKEY"),
             },
             extra or {},
         ])

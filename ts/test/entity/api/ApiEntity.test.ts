@@ -114,7 +114,6 @@ function basicSetup(extra?: any) {
     'WOODY_TEST_API_ENTID': idmap,
     'WOODY_TEST_LIVE': 'FALSE',
     'WOODY_TEST_EXPLAIN': 'FALSE',
-    'WOODY_APIKEY': 'NONE',
   })
 
   idmap = env['WOODY_TEST_API_ENTID']
@@ -124,7 +123,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new WoodySDK(merge([
       {
-        apikey: env.WOODY_APIKEY,
       },
       extra
     ]))

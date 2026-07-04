@@ -3,6 +3,8 @@
 import { ApiEntity } from './entity/ApiEntity'
 import { RandomEntity } from './entity/RandomEntity'
 
+export type * from './WoodyTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -203,12 +205,28 @@ class WoodySDK {
 
 
 
+  _api?: ApiEntity
+
+  // Idiomatic facade: `client.api.list()` / `client.api.load({ id })`.
+  get api(): ApiEntity {
+    return (this._api ??= new ApiEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.api` instead. */
   Api(data?: any) {
     const self = this
     return new ApiEntity(self,data)
   }
 
 
+  _random?: RandomEntity
+
+  // Idiomatic facade: `client.random.list()` / `client.random.load({ id })`.
+  get random(): RandomEntity {
+    return (this._random ??= new RandomEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.random` instead. */
   Random(data?: any) {
     const self = this
     return new RandomEntity(self,data)

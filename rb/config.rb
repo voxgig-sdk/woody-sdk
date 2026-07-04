@@ -15,9 +15,6 @@ module WoodyConfig
       },
       "options" => {
         "base" => "https://woody.cat",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },
@@ -68,6 +65,7 @@ module WoodyConfig
                         "orig" => "id",
                         "reqd" => true,
                         "type" => "`$STRING`",
+                        "index$" => 0,
                       },
                     ],
                   },

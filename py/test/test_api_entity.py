@@ -51,8 +51,7 @@ class TestApiEntity:
         api_ref01_match_dt0 = {
             "id": api_ref01_data["id"],
         }
-        api_ref01_data_dt0_loaded, err = api_ref01_ent.load(api_ref01_match_dt0, None)
-        assert err is None
+        api_ref01_data_dt0_loaded = api_ref01_ent.load(api_ref01_match_dt0, None)
         api_ref01_data_dt0_load_result = helpers.to_map(api_ref01_data_dt0_loaded)
         assert api_ref01_data_dt0_load_result is not None
         assert api_ref01_data_dt0_load_result["id"] == api_ref01_data["id"]
@@ -95,7 +94,6 @@ def _api_basic_setup(extra):
         "WOODY_TEST_API_ENTID": idmap,
         "WOODY_TEST_LIVE": "FALSE",
         "WOODY_TEST_EXPLAIN": "FALSE",
-        "WOODY_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -106,7 +104,6 @@ def _api_basic_setup(extra):
     if env.get("WOODY_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("WOODY_APIKEY"),
             },
             extra or {},
         ])

@@ -44,8 +44,7 @@ class RandomEntityTest < Minitest::Test
     random_ref01_match_dt0 = {
       "id" => random_ref01_data["id"],
     }
-    random_ref01_data_dt0_loaded, err = random_ref01_ent.load(random_ref01_match_dt0, nil)
-    assert_nil err
+    random_ref01_data_dt0_loaded = random_ref01_ent.load(random_ref01_match_dt0, nil)
     random_ref01_data_dt0_load_result = Helpers.to_map(random_ref01_data_dt0_loaded)
     assert !random_ref01_data_dt0_load_result.nil?
     assert_equal random_ref01_data_dt0_load_result["id"], random_ref01_data["id"]
@@ -86,7 +85,6 @@ def random_basic_setup(extra)
     "WOODY_TEST_RANDOM_ENTID" => idmap,
     "WOODY_TEST_LIVE" => "FALSE",
     "WOODY_TEST_EXPLAIN" => "FALSE",
-    "WOODY_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -98,7 +96,6 @@ def random_basic_setup(extra)
   if env["WOODY_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["WOODY_APIKEY"],
       },
       extra || {},
     ])

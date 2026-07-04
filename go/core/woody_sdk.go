@@ -245,11 +245,17 @@ func (sdk *WoodySDK) Direct(fetchargs map[string]any) (map[string]any, error) {
 }
 
 
+// Api returns a Api entity bound to this client.
+// Idiomatic usage: client.Api(nil).List(nil, nil) or
+// client.Api(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *WoodySDK) Api(data map[string]any) WoodyEntity {
 	return NewApiEntityFunc(sdk, data)
 }
 
 
+// Random returns a Random entity bound to this client.
+// Idiomatic usage: client.Random(nil).List(nil, nil) or
+// client.Random(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *WoodySDK) Random(data map[string]any) WoodyEntity {
 	return NewRandomEntityFunc(sdk, data)
 }

@@ -95,7 +95,6 @@ function random_basic_setup(extra)
     ["WOODY_TEST_RANDOM_ENTID"] = idmap,
     ["WOODY_TEST_LIVE"] = "FALSE",
     ["WOODY_TEST_EXPLAIN"] = "FALSE",
-    ["WOODY_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -107,7 +106,6 @@ function random_basic_setup(extra)
   if env["WOODY_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["WOODY_APIKEY"],
       },
       extra or {},
     })
