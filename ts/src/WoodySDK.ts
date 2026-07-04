@@ -205,28 +205,14 @@ class WoodySDK {
 
 
 
-  _api?: ApiEntity
-
-  // Idiomatic facade: `client.api.list()` / `client.api.load({ id })`.
-  get api(): ApiEntity {
-    return (this._api ??= new ApiEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.api` instead. */
+  // Entity access: `client.Api().list()` / `client.Api().load({ id })`.
   Api(data?: any) {
     const self = this
     return new ApiEntity(self,data)
   }
 
 
-  _random?: RandomEntity
-
-  // Idiomatic facade: `client.random.list()` / `client.random.load({ id })`.
-  get random(): RandomEntity {
-    return (this._random ??= new RandomEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.random` instead. */
+  // Entity access: `client.Random().list()` / `client.Random().load({ id })`.
   Random(data?: any) {
     const self = this
     return new RandomEntity(self,data)

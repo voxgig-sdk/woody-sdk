@@ -121,7 +121,7 @@ Alias for `WoodySDK.test()`.
 ## ApiEntity
 
 ```ts
-const api = client.api
+const api = client.Api()
 ```
 
 ### Fields
@@ -139,7 +139,7 @@ const api = client.api
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.api.load({ id: 'api_id' })
+const result = await client.Api().load({ id: 'api_id' })
 ```
 
 ### Common Methods
@@ -173,7 +173,7 @@ Return a copy of the entity options.
 ## RandomEntity
 
 ```ts
-const random = client.random
+const random = client.Random()
 ```
 
 ### Fields
@@ -191,7 +191,7 @@ const random = client.random
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.random.load({ id: 'random_id' })
+const result = await client.Random().load({ id: 'random_id' })
 ```
 
 ### Common Methods

@@ -84,7 +84,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## ApiEntity
 
 ```python
-api = client.api
+api = client.Api()
 ```
 
 ### Fields
@@ -102,7 +102,7 @@ api = client.api
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.api.load({"id": "api_id"})
+result = client.Api().load({"id": "api_id"})
 ```
 
 ### Common Methods
@@ -137,7 +137,7 @@ Return the entity name.
 ## RandomEntity
 
 ```python
-random = client.random
+random = client.Random()
 ```
 
 ### Fields
@@ -155,7 +155,7 @@ random = client.random
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.random.load({"id": "random_id"})
+result = client.Random().load({"id": "random_id"})
 ```
 
 ### Common Methods

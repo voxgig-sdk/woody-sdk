@@ -87,7 +87,7 @@ same parameters as `direct()`.
 ## ApiEntity
 
 ```lua
-local api = client:api(nil)
+local api = client:Api(nil)
 ```
 
 ### Fields
@@ -105,7 +105,7 @@ local api = client:api(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:api():load({ id = "api_id" })
+local result, err = client:Api():load({ id = "api_id" })
 ```
 
 ### Common Methods
@@ -141,7 +141,7 @@ Return the entity name.
 ## RandomEntity
 
 ```lua
-local random = client:random(nil)
+local random = client:Random(nil)
 ```
 
 ### Fields
@@ -159,7 +159,7 @@ local random = client:random(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:random():load({ id = "random_id" })
+local result, err = client:Random():load({ id = "random_id" })
 ```
 
 ### Common Methods

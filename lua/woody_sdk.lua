@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:api():list() / client:api():load({ id = ... })
-function WoodySDK:api(data)
+-- Idiomatic facade: client:Api():list() / client:Api():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function WoodySDK:Api(data)
   local EntityMod = require("entity.api_entity")
   if data == nil then
     if self._api == nil then
@@ -256,15 +257,10 @@ function WoodySDK:api(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:api() instead.
-function WoodySDK:Api(data)
-  local EntityMod = require("entity.api_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:random():list() / client:random():load({ id = ... })
-function WoodySDK:random(data)
+-- Idiomatic facade: client:Random():list() / client:Random():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function WoodySDK:Random(data)
   local EntityMod = require("entity.random_entity")
   if data == nil then
     if self._random == nil then
@@ -272,12 +268,6 @@ function WoodySDK:random(data)
     end
     return self._random
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:random() instead.
-function WoodySDK:Random(data)
-  local EntityMod = require("entity.random_entity")
   return EntityMod.new(self, data)
 end
 

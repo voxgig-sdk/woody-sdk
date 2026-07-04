@@ -220,41 +220,21 @@ class WoodySDK:
         }
 
 
-    @property
-    def api(self):
-        """Idiomatic facade: client.api.list() / client.api.load({"id": ...})."""
-        from entity.api_entity import ApiEntity
-        cached = getattr(self, "_api", None)
-        if cached is None:
-            cached = ApiEntity(self, None)
-            self._api = cached
-        return cached
-
-    def Api(self, data=None):
-        # Deprecated: use client.api instead.
+    def Api(self, data=None) -> "ApiEntity":
+        """Entity factory: client.Api().list({}) / client.Api().load({"id": ...})."""
         from entity.api_entity import ApiEntity
         return ApiEntity(self, data)
 
 
-    @property
-    def random(self):
-        """Idiomatic facade: client.random.list() / client.random.load({"id": ...})."""
-        from entity.random_entity import RandomEntity
-        cached = getattr(self, "_random", None)
-        if cached is None:
-            cached = RandomEntity(self, None)
-            self._random = cached
-        return cached
-
-    def Random(self, data=None):
-        # Deprecated: use client.random instead.
+    def Random(self, data=None) -> "RandomEntity":
+        """Entity factory: client.Random().list({}) / client.Random().load({"id": ...})."""
         from entity.random_entity import RandomEntity
         return RandomEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "WoodySDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -274,3 +254,10 @@ class WoodySDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.api_entity import ApiEntity
+    from entity.random_entity import RandomEntity

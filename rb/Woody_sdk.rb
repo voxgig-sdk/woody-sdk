@@ -208,26 +208,14 @@ class WoodySDK
   end
 
 
-  # Idiomatic facade: client.api.list / client.api.load({ "id" => ... })
-  def api
-    require_relative 'entity/api_entity'
-    @api ||= ApiEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.api instead.
+  # Canonical facade: client.Api.list / client.Api.load({ "id" => ... })
   def Api(data = nil)
     require_relative 'entity/api_entity'
     ApiEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.random.list / client.random.load({ "id" => ... })
-  def random
-    require_relative 'entity/random_entity'
-    @random ||= RandomEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.random instead.
+  # Canonical facade: client.Random.list / client.Random.load({ "id" => ... })
   def Random(data = nil)
     require_relative 'entity/random_entity'
     RandomEntity.new(self, data)

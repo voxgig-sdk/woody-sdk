@@ -33,9 +33,10 @@ $client = new WoodySDK();
 
 ```php
 try {
-    $result = $client->api()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare Api record (throws on error).
+    $api = $client->Api()->load(["id" => "example_id"]);
+    print_r($api);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -81,13 +82,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = WoodySDK::test();
+$client = WoodySDK::test([
+    "entity" => ["api" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->api()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$api = $client->Api()->load(["id" => "test01"]);
+print_r($api);
 ```
 
 ### Use a custom fetch function
@@ -166,7 +171,7 @@ Creates a test-mode client with mock transport. Both arguments may be `null`.
 | `get_utility` | `(): Utility` | Copy of the SDK utility object. |
 | `prepare` | `(array $fetchargs): array` | Build an HTTP request definition without sending. |
 | `direct` | `(array $fetchargs): array` | Build and send an HTTP request. |
-| `Api` | `($data): ApiEntity` | Create a Api entity instance. |
+| `Api` | `($data): ApiEntity` | Create an Api entity instance. |
 | `Random` | `($data): RandomEntity` | Create a Random entity instance. |
 
 ### Entity interface
@@ -238,7 +243,7 @@ API path: `/api/random`
 
 ### Api
 
-Create an instance: `const api = client.api`
+Create an instance: `$api = $client->Api();`
 
 #### Operations
 
@@ -256,14 +261,15 @@ Create an instance: `const api = client.api`
 
 #### Example: Load
 
-```ts
-const api = await client.api.load({ id: 'api_id' })
+```php
+// load() returns the bare Api record (throws on error).
+$api = $client->Api()->load(["id" => "api_id"]);
 ```
 
 
 ### Random
 
-Create an instance: `const random = client.random`
+Create an instance: `$random = $client->Random();`
 
 #### Operations
 
@@ -281,8 +287,9 @@ Create an instance: `const random = client.random`
 
 #### Example: Load
 
-```ts
-const random = await client.random.load({ id: 'random_id' })
+```php
+// load() returns the bare Random record (throws on error).
+$random = $client->Random()->load(["id" => "random_id"]);
 ```
 
 
@@ -357,7 +364,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$api = $client->api();
+$api = $client->Api();
 $api->load(["id" => "example_id"]);
 
 // $api->dataGet() now returns the loaded api data
