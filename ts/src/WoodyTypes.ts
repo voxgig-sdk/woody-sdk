@@ -21,5 +21,9 @@ export interface Random {
   url?: string
 }
 
-export type RandomLoadMatch = Partial<Random>
+export interface RandomLoadMatch {
+  id: string
+  permalink?: string
+  url?: string
+}
 

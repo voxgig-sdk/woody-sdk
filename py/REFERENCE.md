@@ -91,9 +91,9 @@ api = client.Api()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$STRING`` | No |  |
-| `permalink` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `id` | `str` | No |  |
+| `permalink` | `str` | No |  |
+| `url` | `str` | No |  |
 
 ### Operations
 
@@ -144,9 +144,9 @@ random = client.Random()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$STRING`` | No |  |
-| `permalink` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `id` | `str` | No |  |
+| `permalink` | `str` | No |  |
+| `url` | `str` | No |  |
 
 ### Operations
 

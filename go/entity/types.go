@@ -27,10 +27,9 @@ type Random struct {
 	Url *string `json:"url,omitempty"`
 }
 
-// RandomLoadMatch mirrors the random fields as an all-optional match
-// filter (Go analog of Partial<Random>).
+// RandomLoadMatch is the typed request payload for Random.LoadTyped.
 type RandomLoadMatch struct {
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 	Permalink *string `json:"permalink,omitempty"`
 	Url *string `json:"url,omitempty"`
 }

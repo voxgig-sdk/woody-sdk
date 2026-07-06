@@ -221,13 +221,13 @@ class WoodySDK:
 
 
     def Api(self, data=None) -> "ApiEntity":
-        """Entity factory: client.Api().list({}) / client.Api().load({"id": ...})."""
+        """Entity factory: client.Api().list() / client.Api().load({"id": ...})."""
         from entity.api_entity import ApiEntity
         return ApiEntity(self, data)
 
 
     def Random(self, data=None) -> "RandomEntity":
-        """Entity factory: client.Random().list({}) / client.Random().load({"id": ...})."""
+        """Entity factory: client.Random().list() / client.Random().load({"id": ...})."""
         from entity.random_entity import RandomEntity
         return RandomEntity(self, data)
 

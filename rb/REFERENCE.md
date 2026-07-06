@@ -8,7 +8,7 @@ Complete API reference for the Woody Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'woody_sdk'
+require_relative 'Woody_sdk'
 
 client = WoodySDK.new(options)
 ```
@@ -97,9 +97,9 @@ api = client.Api
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$STRING`` | No |  |
-| `permalink` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `id` | `String` | No |  |
+| `permalink` | `String` | No |  |
+| `url` | `String` | No |  |
 
 ### Operations
 
@@ -151,9 +151,9 @@ random = client.Random
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$STRING`` | No |  |
-| `permalink` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `id` | `String` | No |  |
+| `permalink` | `String` | No |  |
+| `url` | `String` | No |  |
 
 ### Operations
 

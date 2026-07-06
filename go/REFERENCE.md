@@ -101,9 +101,9 @@ api := client.Api(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$STRING`` | No |  |
-| `permalink` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `id` | `string` | No |  |
+| `permalink` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -149,9 +149,9 @@ random := client.Random(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$STRING`` | No |  |
-| `permalink` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `id` | `string` | No |  |
+| `permalink` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 

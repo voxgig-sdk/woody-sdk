@@ -34,10 +34,10 @@ class Random
     public ?string $url = null;
 }
 
-/** Match filter for Random#load (any subset of Random fields). */
+/** Request payload for Random#load. */
 class RandomLoadMatch
 {
-    public ?string $id = null;
+    public string $id;
     public ?string $permalink = null;
     public ?string $url = null;
 }

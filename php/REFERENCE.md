@@ -49,11 +49,11 @@ Create a new `ApiEntity` instance. Pass `null` for no initial data.
 
 Create a new `RandomEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): WoodyUtility`
 
 Return a copy of the SDK utility object.
 
@@ -96,9 +96,9 @@ $api = $client->Api();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$STRING`` | No |  |
-| `permalink` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `id` | `string` | No |  |
+| `permalink` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -112,19 +112,19 @@ $result = $client->Api()->load(["id" => "api_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -133,7 +133,7 @@ Set the entity match criteria.
 Create a new `ApiEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -150,9 +150,9 @@ $random = $client->Random();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$STRING`` | No |  |
-| `permalink` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `id` | `string` | No |  |
+| `permalink` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -166,19 +166,19 @@ $result = $client->Random()->load(["id" => "random_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -187,7 +187,7 @@ Set the entity match criteria.
 Create a new `RandomEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

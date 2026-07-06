@@ -128,9 +128,9 @@ const api = client.Api()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$STRING`` | No |  |
-| `permalink` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `id` | `string` | No |  |
+| `permalink` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -180,9 +180,9 @@ const random = client.Random()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | ``$STRING`` | No |  |
-| `permalink` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `id` | `string` | No |  |
+| `permalink` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 

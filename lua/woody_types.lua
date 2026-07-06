@@ -20,6 +20,9 @@
 ---@field url? string
 
 ---@class RandomLoadMatch
+---@field id string
+---@field permalink? string
+---@field url? string
 
 local M = {}
 

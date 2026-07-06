@@ -32,7 +32,10 @@ class Random(TypedDict, total=False):
     url: str
 
 
-class RandomLoadMatch(TypedDict, total=False):
+class RandomLoadMatchRequired(TypedDict):
     id: str
+
+
+class RandomLoadMatch(RandomLoadMatchRequired, total=False):
     permalink: str
     url: str
