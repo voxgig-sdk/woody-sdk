@@ -15,9 +15,9 @@ main: {
           url: "https://woody.cat"
         }
       ]
+      summary: "Provides access to random woody images and information through a REST API."
       title: "Woody API"
       version: "1.0.0"
+      website: "https://woody.cat"
     }
   }
-}
-

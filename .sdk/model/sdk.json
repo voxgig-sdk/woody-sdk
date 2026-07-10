@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -315,14 +312,17 @@
           "url": "https://woody.cat"
         },
         "description": "Provides access to random woody images and information through a REST API.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://woody.cat"
           }
         ],
+        "summary": "Provides access to random woody images and information through a REST API.",
         "title": "Woody API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://woody.cat"
       },
       "option": {},
       "target": {
@@ -375,6 +375,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -425,6 +428,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
