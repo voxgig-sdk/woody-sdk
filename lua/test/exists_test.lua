@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Woody SDK exists test
 
 local sdk = require("woody_sdk")
 
