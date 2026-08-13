@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import WoodyControl
-from core.error import WoodyError
-from core.result import WoodyResult
-from core.spec import WoodySpec
+from woody_sdk.config import make_config
+from woody_sdk.features import _make_feature
+from woody_sdk.core.control import WoodyControl
+from woody_sdk.core.error import WoodyError
+from woody_sdk.core.result import WoodyResult
+from woody_sdk.core.spec import WoodySpec
 
 
 # True when this SDK was generated with the named feature.

@@ -69,6 +69,7 @@ module WoodyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/{id}",
                   "parts" => [
@@ -127,6 +128,7 @@ module WoodyConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/random",
                   "parts" => [

@@ -52,7 +52,7 @@ class ApiEntityTest extends TestCase
             "id" => $api_ref01_data["id"],
         ];
         $api_ref01_data_dt0_loaded = $api_ref01_ent->load($api_ref01_match_dt0, null);
-        $api_ref01_data_dt0_load_result = Helpers::to_map($api_ref01_data_dt0_loaded);
+        $api_ref01_data_dt0_load_result = Helpers::to_map(is_object($api_ref01_data_dt0_loaded) && method_exists($api_ref01_data_dt0_loaded, 'data_get') ? $api_ref01_data_dt0_loaded->data_get() : $api_ref01_data_dt0_loaded);
         $this->assertNotNull($api_ref01_data_dt0_load_result);
         $this->assertEquals($api_ref01_data_dt0_load_result["id"], $api_ref01_data["id"]);
 

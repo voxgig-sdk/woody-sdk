@@ -6,9 +6,9 @@ import time
 
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from woody_sdk.utility.voxgig_struct import voxgig_struct as vs
 from woody_sdk import WoodySDK
-from core import helpers
+from woody_sdk.core import helpers
 
 _TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 from test import runner
@@ -52,7 +52,7 @@ class TestRandomEntity:
             "id": random_ref01_data["id"],
         }
         random_ref01_data_dt0_loaded = random_ref01_ent.load(random_ref01_match_dt0, None)
-        random_ref01_data_dt0_load_result = helpers.to_map(random_ref01_data_dt0_loaded)
+        random_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(random_ref01_data_dt0_loaded))
         assert random_ref01_data_dt0_load_result is not None
         assert random_ref01_data_dt0_load_result["id"] == random_ref01_data["id"]
 

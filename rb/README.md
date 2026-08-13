@@ -34,7 +34,7 @@ client = WoodySDK.new
 
 ```ruby
 begin
-  # load returns the bare Api record (raises on error).
+  # load returns the ENTITY — call data_get for the Api record (raises on error).
   api = client.Api.load({ "id" => "example_id" })
   puts api
 rescue => err
@@ -120,7 +120,8 @@ client = WoodySDK.test({
   "entity" => { "api" => { "test01" => { "id" => "test01" } } },
 })
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 api = client.Api.load({ "id" => "test01" })
 puts api
 ```
@@ -284,7 +285,7 @@ Create an instance: `api = client.Api`
 #### Example: Load
 
 ```ruby
-# load returns the bare Api record (raises on error).
+# load returns the ENTITY — call data_get for the Api record (raises on error).
 api = client.Api.load({ "id" => "api_id" })
 ```
 
@@ -310,7 +311,7 @@ Create an instance: `random = client.Random`
 #### Example: Load
 
 ```ruby
-# load returns the bare Random record (raises on error).
+# load returns the ENTITY — call data_get for the Random record (raises on error).
 random = client.Random.load({ "id" => "random_id" })
 ```
 

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from woody_sdk.utility.voxgig_struct import voxgig_struct as vs
 from woody_sdk import WoodySDK
-from core import helpers
+from woody_sdk.core import helpers
 from test import runner
 
 

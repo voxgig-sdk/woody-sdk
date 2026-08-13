@@ -45,7 +45,7 @@ class ApiEntityTest < Minitest::Test
       "id" => api_ref01_data["id"],
     }
     api_ref01_data_dt0_loaded = api_ref01_ent.load(api_ref01_match_dt0, nil)
-    api_ref01_data_dt0_load_result = Helpers.to_map(api_ref01_data_dt0_loaded)
+    api_ref01_data_dt0_load_result = Helpers.to_map(api_ref01_data_dt0_loaded.respond_to?(:data_get) ? api_ref01_data_dt0_loaded.data_get : api_ref01_data_dt0_loaded)
     assert !api_ref01_data_dt0_load_result.nil?
     assert_equal api_ref01_data_dt0_load_result["id"], api_ref01_data["id"]
 

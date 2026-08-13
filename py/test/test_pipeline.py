@@ -16,11 +16,11 @@
 import pytest
 
 from woody_sdk import WoodySDK
-from core.error import WoodyError
-from core.result import WoodyResult
-from core.response import WoodyResponse
-from core.spec import WoodySpec
-from feature.base_feature import WoodyBaseFeature
+from woody_sdk.core.error import WoodyError
+from woody_sdk.core.result import WoodyResult
+from woody_sdk.core.response import WoodyResponse
+from woody_sdk.core.spec import WoodySpec
+from woody_sdk.feature.base_feature import WoodyBaseFeature
 
 
 def _client():

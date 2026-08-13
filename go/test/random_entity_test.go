@@ -68,7 +68,7 @@ func TestRandomEntity(t *testing.T) {
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		randomRef01DataDt0LoadResult := core.ToMapAny(randomRef01DataDt0Loaded)
+		randomRef01DataDt0LoadResult := core.ToMapAny(entityData(randomRef01DataDt0Loaded))
 		if randomRef01DataDt0LoadResult == nil {
 			t.Fatal("expected load result to be a map")
 		}

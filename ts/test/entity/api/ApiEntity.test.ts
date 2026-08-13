@@ -63,7 +63,7 @@ describe('ApiEntity', async () => {
     const api_ref01_ent = client.Api()
     const api_ref01_match_dt0: any = {}
     api_ref01_match_dt0.id = api_ref01_data.id
-    const api_ref01_data_dt0 = await api_ref01_ent.load(api_ref01_match_dt0)
+    const api_ref01_data_dt0 = (await api_ref01_ent.load(api_ref01_match_dt0)).data()
     assert(api_ref01_data_dt0.id === api_ref01_data.id)
 
 

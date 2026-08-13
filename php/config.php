@@ -74,6 +74,7 @@ class WoodyConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/{id}',
                   'parts' => [
@@ -132,6 +133,7 @@ class WoodyConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/random',
                   'parts' => [

@@ -44,7 +44,7 @@ ApiLoadMatch = Struct.new(
 #
 # @!attribute [rw] url
 #   @return [String, nil]
-Random = Struct.new(
+RandomType = Struct.new(
   :id,
   :permalink,
   :url,

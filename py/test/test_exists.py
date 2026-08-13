@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Woody SDK exists test
 
 import pytest
 from woody_sdk import WoodySDK
