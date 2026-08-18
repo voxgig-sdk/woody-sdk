@@ -40,7 +40,7 @@ class WoodySDK
         $utility = new WoodyUtility();
         $this->_utility = $utility;
 
-        $config = WoodyConfig::make_config();
+        $config = WoodyConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

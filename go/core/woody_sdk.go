@@ -23,7 +23,7 @@ func NewWoodySDK(options map[string]any) *WoodySDK {
 
 	sdk.utility = NewUtility()
 
-	config := MakeConfig()
+	config := SharedConfig()
 
 	sdk.rootctx = sdk.utility.MakeContext(map[string]any{
 		"client":  sdk,

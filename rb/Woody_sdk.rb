@@ -28,7 +28,7 @@ class WoodySDK
     utility = WoodyUtility.new
     @_utility = utility
 
-    config = WoodyConfig.make_config
+    config = WoodyConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
