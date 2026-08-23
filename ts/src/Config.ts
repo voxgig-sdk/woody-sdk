@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'Woody',
+        slug: "woody",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -59,14 +70,17 @@ class Config {
       "fields": [
         {
           "name": "id",
+          "short": "Unique identifier for the Woody",
           "type": "`$STRING`"
         },
         {
           "name": "permalink",
+          "short": "Permanent link to this Woody",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "URL to the Woody image",
           "type": "`$STRING`"
         }
       ],
@@ -116,14 +130,17 @@ class Config {
       "fields": [
         {
           "name": "id",
+          "short": "Unique identifier for the Woody",
           "type": "`$STRING`"
         },
         {
           "name": "permalink",
+          "short": "Permanent link to this Woody",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "URL to the Woody image",
           "type": "`$STRING`"
         }
       ],

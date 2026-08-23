@@ -239,9 +239,9 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `id` |  |
-| `permalink` |  |
-| `url` |  |
+| `id` | Unique identifier for the Woody |
+| `permalink` | Permanent link to this Woody |
+| `url` | URL to the Woody image |
 
 Operations: Load.
 
@@ -251,9 +251,9 @@ API path: `/api/{id}`
 
 | Field | Description |
 | --- | --- |
-| `id` |  |
-| `permalink` |  |
-| `url` |  |
+| `id` | Unique identifier for the Woody |
+| `permalink` | Permanent link to this Woody |
+| `url` | URL to the Woody image |
 
 Operations: Load.
 
@@ -278,9 +278,9 @@ Create an instance: `api = client.Api`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id` | `String` |  |
-| `permalink` | `String` |  |
-| `url` | `String` |  |
+| `id` | `String` | Unique identifier for the Woody |
+| `permalink` | `String` | Permanent link to this Woody |
+| `url` | `String` | URL to the Woody image |
 
 #### Example: Load
 
@@ -304,9 +304,9 @@ Create an instance: `random = client.Random`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id` | `String` |  |
-| `permalink` | `String` |  |
-| `url` | `String` |  |
+| `id` | `String` | Unique identifier for the Woody |
+| `permalink` | `String` | Permanent link to this Woody |
+| `url` | `String` | URL to the Woody image |
 
 #### Example: Load
 

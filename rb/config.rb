@@ -19,6 +19,9 @@ module WoodyConfig
     {
       "main" => {
         "name" => "Woody",
+        "slug" => "woody",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -42,14 +45,17 @@ module WoodyConfig
           "fields" => [
             {
               "name" => "id",
+              "short" => "Unique identifier for the Woody",
               "type" => "`$STRING`",
             },
             {
               "name" => "permalink",
+              "short" => "Permanent link to this Woody",
               "type" => "`$STRING`",
             },
             {
               "name" => "url",
+              "short" => "URL to the Woody image",
               "type" => "`$STRING`",
             },
           ],
@@ -99,14 +105,17 @@ module WoodyConfig
           "fields" => [
             {
               "name" => "id",
+              "short" => "Unique identifier for the Woody",
               "type" => "`$STRING`",
             },
             {
               "name" => "permalink",
+              "short" => "Permanent link to this Woody",
               "type" => "`$STRING`",
             },
             {
               "name" => "url",
+              "short" => "URL to the Woody image",
               "type" => "`$STRING`",
             },
           ],

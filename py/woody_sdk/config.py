@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "Woody",
+            "slug": "woody",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -51,14 +54,17 @@ def make_config():
         "fields": [
           {
             "name": "id",
+            "short": "Unique identifier for the Woody",
             "type": "`$STRING`",
           },
           {
             "name": "permalink",
+            "short": "Permanent link to this Woody",
             "type": "`$STRING`",
           },
           {
             "name": "url",
+            "short": "URL to the Woody image",
             "type": "`$STRING`",
           },
         ],
@@ -108,14 +114,17 @@ def make_config():
         "fields": [
           {
             "name": "id",
+            "short": "Unique identifier for the Woody",
             "type": "`$STRING`",
           },
           {
             "name": "permalink",
+            "short": "Permanent link to this Woody",
             "type": "`$STRING`",
           },
           {
             "name": "url",
+            "short": "URL to the Woody image",
             "type": "`$STRING`",
           },
         ],

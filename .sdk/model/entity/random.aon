@@ -1,6 +1,6 @@
-# Entity: api
+# Entity: random
 
-main: kit: entity: api: {
+main: kit: entity: random: {
 
   alias: field: {}
 
@@ -8,16 +8,19 @@ main: kit: entity: api: {
     {
       name: "id"
       req: false
+      short: "Unique identifier for the Woody"
       type: "`$STRING`"
     }
     {
       name: "permalink"
       req: false
+      short: "Permanent link to this Woody"
       type: "`$STRING`"
     }
     {
       name: "url"
       req: false
+      short: "URL to the Woody image"
       type: "`$STRING`"
     }
   ]
@@ -27,34 +30,18 @@ main: kit: entity: api: {
     name: "id"
   }
 
-  name: "api"
+  name: "random"
   op: {
     load: {
       name: "load"
       points: [
         {
-          args: {
-            params: [
-              {
-                kind: "param"
-                name: "id"
-                orig: "id"
-                reqd: true
-                type: "`$STRING`"
-              }
-            ]
-          }
           method: "GET"
-          orig: "/api/{id}"
+          orig: "/api/random"
           parts: [
             "api"
-            "{id}"
+            "random"
           ]
-          select: {
-            exist: [
-              "id"
-            ]
-          }
           transform: {
             req: "`reqdata`"
             res: "`body`"

@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Woody",
+			"slug": "woody",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -34,14 +37,17 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the Woody",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "permalink",
+						"short": "Permanent link to this Woody",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "URL to the Woody image",
 						"type": "`$STRING`",
 					},
 				},
@@ -91,14 +97,17 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the Woody",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "permalink",
+						"short": "Permanent link to this Woody",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "url",
+						"short": "URL to the Woody image",
 						"type": "`$STRING`",
 					},
 				},

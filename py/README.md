@@ -242,9 +242,9 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `id` |  |
-| `permalink` |  |
-| `url` |  |
+| `id` | Unique identifier for the Woody |
+| `permalink` | Permanent link to this Woody |
+| `url` | URL to the Woody image |
 
 Operations: Load.
 
@@ -254,9 +254,9 @@ API path: `/api/{id}`
 
 | Field | Description |
 | --- | --- |
-| `id` |  |
-| `permalink` |  |
-| `url` |  |
+| `id` | Unique identifier for the Woody |
+| `permalink` | Permanent link to this Woody |
+| `url` | URL to the Woody image |
 
 Operations: Load.
 
@@ -281,9 +281,9 @@ Create an instance: `api = client.Api()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id` | `str` |  |
-| `permalink` | `str` |  |
-| `url` | `str` |  |
+| `id` | `str` | Unique identifier for the Woody |
+| `permalink` | `str` | Permanent link to this Woody |
+| `url` | `str` | URL to the Woody image |
 
 #### Example: Load
 
@@ -306,9 +306,9 @@ Create an instance: `random = client.Random()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id` | `str` |  |
-| `permalink` | `str` |  |
-| `url` | `str` |  |
+| `id` | `str` | Unique identifier for the Woody |
+| `permalink` | `str` | Permanent link to this Woody |
+| `url` | `str` | URL to the Woody image |
 
 #### Example: Load
 

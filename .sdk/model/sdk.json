@@ -36,18 +36,21 @@
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the Woody",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "permalink",
               "req": false,
+              "short": "Permanent link to this Woody",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": false,
+              "short": "URL to the Woody image",
               "type": "`$STRING`"
             }
           ],
@@ -109,18 +112,21 @@
               "active": true,
               "name": "id",
               "req": false,
+              "short": "Unique identifier for the Woody",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "permalink",
               "req": false,
+              "short": "Permanent link to this Woody",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": false,
+              "short": "URL to the Woody image",
               "type": "`$STRING`"
             }
           ],

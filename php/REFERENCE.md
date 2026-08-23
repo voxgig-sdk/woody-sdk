@@ -96,9 +96,9 @@ $api = $client->Api();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | `string` | No |  |
-| `permalink` | `string` | No |  |
-| `url` | `string` | No |  |
+| `id` | `string` | No | Unique identifier for the Woody |
+| `permalink` | `string` | No | Permanent link to this Woody |
+| `url` | `string` | No | URL to the Woody image |
 
 ### Operations
 
@@ -150,9 +150,9 @@ $random = $client->Random();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | `string` | No |  |
-| `permalink` | `string` | No |  |
-| `url` | `string` | No |  |
+| `id` | `string` | No | Unique identifier for the Woody |
+| `permalink` | `string` | No | Permanent link to this Woody |
+| `url` | `string` | No | URL to the Woody image |
 
 ### Operations
 

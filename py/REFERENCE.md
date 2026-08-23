@@ -91,9 +91,9 @@ api = client.Api()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | `str` | No |  |
-| `permalink` | `str` | No |  |
-| `url` | `str` | No |  |
+| `id` | `str` | No | Unique identifier for the Woody |
+| `permalink` | `str` | No | Permanent link to this Woody |
+| `url` | `str` | No | URL to the Woody image |
 
 ### Operations
 
@@ -144,9 +144,9 @@ random = client.Random()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | `str` | No |  |
-| `permalink` | `str` | No |  |
-| `url` | `str` | No |  |
+| `id` | `str` | No | Unique identifier for the Woody |
+| `permalink` | `str` | No | Permanent link to this Woody |
+| `url` | `str` | No | URL to the Woody image |
 
 ### Operations
 

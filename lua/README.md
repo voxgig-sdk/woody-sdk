@@ -226,9 +226,9 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `id` |  |
-| `permalink` |  |
-| `url` |  |
+| `id` | Unique identifier for the Woody |
+| `permalink` | Permanent link to this Woody |
+| `url` | URL to the Woody image |
 
 Operations: Load.
 
@@ -238,9 +238,9 @@ API path: `/api/{id}`
 
 | Field | Description |
 | --- | --- |
-| `id` |  |
-| `permalink` |  |
-| `url` |  |
+| `id` | Unique identifier for the Woody |
+| `permalink` | Permanent link to this Woody |
+| `url` | URL to the Woody image |
 
 Operations: Load.
 
@@ -265,9 +265,9 @@ Create an instance: `local api = client:Api(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id` | `string` |  |
-| `permalink` | `string` |  |
-| `url` | `string` |  |
+| `id` | `string` | Unique identifier for the Woody |
+| `permalink` | `string` | Permanent link to this Woody |
+| `url` | `string` | URL to the Woody image |
 
 #### Example: Load
 
@@ -290,9 +290,9 @@ Create an instance: `local random = client:Random(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `id` | `string` |  |
-| `permalink` | `string` |  |
-| `url` | `string` |  |
+| `id` | `string` | Unique identifier for the Woody |
+| `permalink` | `string` | Permanent link to this Woody |
+| `url` | `string` | URL to the Woody image |
 
 #### Example: Load
 
