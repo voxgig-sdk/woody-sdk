@@ -28,6 +28,7 @@ module WoodyConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
