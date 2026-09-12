@@ -12,12 +12,14 @@ main: kit: entity: api: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "permalink"
       req: false
       short: "Permanent link to this Woody"
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "url"
       req: false
       short: "URL to the Woody image"
@@ -49,9 +51,13 @@ main: kit: entity: api: {
           }
           method: "GET"
           orig: "/api/{id}"
-          parts: [
-            "api"
-            "{id}"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [

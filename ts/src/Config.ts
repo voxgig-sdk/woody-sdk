@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -75,16 +86,22 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "permalink",
           "short": "Permanent link to this Woody",
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "url",
           "short": "URL to the Woody image",
           "type": "`$STRING`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "api",
       "op": {
         "load": {
@@ -106,9 +123,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/{id}",
-              "parts": [
-                "api",
-                "{id}"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "var": "id"
+                }
               ],
               "select": {
                 "exist": [
@@ -118,7 +139,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "api",
+                "{id}"
+              ]
             }
           ]
         }
@@ -135,16 +160,22 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "permalink",
           "short": "Permanent link to this Woody",
           "type": "`$STRING`"
         },
         {
+          "format": "uri",
           "name": "url",
           "short": "URL to the Woody image",
           "type": "`$STRING`"
         }
       ],
+      "id": {
+        "field": "id",
+        "name": "id"
+      },
       "name": "random",
       "op": {
         "load": {
@@ -156,15 +187,23 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/random",
-              "parts": [
-                "api",
-                "random"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "random"
+                }
               ],
               "select": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              }
+              },
+              "parts": [
+                "api",
+                "random"
+              ]
             }
           ]
         }
@@ -180,6 +219,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

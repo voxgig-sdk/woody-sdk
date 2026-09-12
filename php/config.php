@@ -64,15 +64,21 @@ class WoodyConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'permalink',
               'short' => 'Permanent link to this Woody',
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'url',
               'short' => 'URL to the Woody image',
               'type' => '`$STRING`',
             ],
+          ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
           ],
           'name' => 'api',
           'op' => [
@@ -95,9 +101,13 @@ class WoodyConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/{id}',
-                  'parts' => [
-                    'api',
-                    '{id}',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'var' => 'id',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -107,6 +117,10 @@ class WoodyConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    '{id}',
                   ],
                 ],
               ],
@@ -124,15 +138,21 @@ class WoodyConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'permalink',
               'short' => 'Permanent link to this Woody',
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'url',
               'short' => 'URL to the Woody image',
               'type' => '`$STRING`',
             ],
+          ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
           ],
           'name' => 'random',
           'op' => [
@@ -145,14 +165,22 @@ class WoodyConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/random',
-                  'parts' => [
-                    'api',
-                    'random',
+                  'segments' => [
+                    [
+                      'lit' => 'api',
+                    ],
+                    [
+                      'lit' => 'random',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'api',
+                    'random',
                   ],
                 ],
               ],

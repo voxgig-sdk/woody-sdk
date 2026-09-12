@@ -12,12 +12,14 @@ main: kit: entity: random: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "permalink"
       req: false
       short: "Permanent link to this Woody"
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "url"
       req: false
       short: "URL to the Woody image"
@@ -38,9 +40,13 @@ main: kit: entity: random: {
         {
           method: "GET"
           orig: "/api/random"
-          parts: [
-            "api"
-            "random"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "random"
+            }
           ]
           transform: {
             req: "`reqdata`"

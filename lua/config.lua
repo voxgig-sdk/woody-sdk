@@ -38,15 +38,21 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "permalink",
             ["short"] = "Permanent link to this Woody",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "url",
             ["short"] = "URL to the Woody image",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "api",
         ["op"] = {
@@ -69,9 +75,13 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/{id}",
-                ["parts"] = {
-                  "api",
-                  "{id}",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["var"] = "id",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -81,6 +91,10 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "api",
+                  "{id}",
                 },
               },
             },
@@ -98,15 +112,21 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "permalink",
             ["short"] = "Permanent link to this Woody",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "url",
             ["short"] = "URL to the Woody image",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "random",
         ["op"] = {
@@ -119,14 +139,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/random",
-                ["parts"] = {
-                  "api",
-                  "random",
+                ["segments"] = {
+                  {
+                    ["lit"] = "api",
+                  },
+                  {
+                    ["lit"] = "random",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "api",
+                  "random",
                 },
               },
             },
