@@ -105,7 +105,7 @@ local result, err = client:Api():load({ id = "test01" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/woody` | publish pending — [install from git tag](https://github.com/voxgig-sdk/woody-sdk/releases) |
+| TypeScript | `@voxgig-sdk/woody-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/woody-sdk/releases) |
 | Python | `voxgig-sdk-woody` | publish pending — [install from git tag](https://github.com/voxgig-sdk/woody-sdk/releases) |
 | PHP | `voxgig-sdk/woody` | publish pending — [install from git tag](https://github.com/voxgig-sdk/woody-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/woody-sdk/go` | `go get github.com/voxgig-sdk/woody-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Api():load({ id = "test01" })
 ### TypeScript
 
 ```ts
-import { WoodySDK } from '@voxgig-sdk/woody'
+import { WoodySDK } from '@voxgig-sdk/woody-sdk'
 
 const client = new WoodySDK()
 

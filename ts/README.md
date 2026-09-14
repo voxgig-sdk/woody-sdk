@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { WoodySDK } from '@voxgig-sdk/woody'
+import { WoodySDK } from '@voxgig-sdk/woody-sdk'
 
 const client = new WoodySDK()
 ```
@@ -443,7 +443,7 @@ woody/
 Import the SDK from the package root:
 
 ```ts
-import { WoodySDK } from '@voxgig-sdk/woody'
+import { WoodySDK } from '@voxgig-sdk/woody-sdk'
 ```
 
 ### Entity state
