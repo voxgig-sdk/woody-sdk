@@ -1,12 +1,18 @@
 # Woody SDK feature factory
 
 from woody_sdk.feature.base_feature import WoodyBaseFeature
+from woody_sdk.feature.ratelimit_feature import WoodyRatelimitFeature
+from woody_sdk.feature.retry_feature import WoodyRetryFeature
 from woody_sdk.feature.test_feature import WoodyTestFeature
+from woody_sdk.feature.timeout_feature import WoodyTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: WoodyBaseFeature(),
+    "ratelimit": lambda: WoodyRatelimitFeature(),
+    "retry": lambda: WoodyRetryFeature(),
     "test": lambda: WoodyTestFeature(),
+    "timeout": lambda: WoodyTimeoutFeature(),
 }
 
 
