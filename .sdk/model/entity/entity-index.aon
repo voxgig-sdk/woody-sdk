@@ -1,4 +1,4 @@
 # Entity Models
 
-@"api.aon"
-@"random.aon"
+@"./api.aon"
+@"./random.aon"

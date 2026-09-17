@@ -127,12 +127,12 @@ class Config {
 
     entity: {
       
-      api: {
-      },
-
-      random: {
-      },
-
+        api: {
+        },
+  
+        random: {
+        },
+  
     }
   }
 

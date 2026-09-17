@@ -105,12 +105,12 @@ local result, err = client:Api():load({ id = "test01" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/woody-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/woody-sdk/releases) |
-| Python | `voxgig-sdk-woody` | publish pending — [install from git tag](https://github.com/voxgig-sdk/woody-sdk/releases) |
-| PHP | `voxgig-sdk/woody` | publish pending — [install from git tag](https://github.com/voxgig-sdk/woody-sdk/releases) |
+| TypeScript | `@voxgig-sdk/woody-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/woody-sdk/tags) |
+| Python | `voxgig-sdk-woody` | publish pending — [install from git tag](https://github.com/voxgig-sdk/woody-sdk/tags) |
+| PHP | `voxgig-sdk/woody` | publish pending — [install from git tag](https://github.com/voxgig-sdk/woody-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/woody-sdk/go` | `go get github.com/voxgig-sdk/woody-sdk/go@latest` |
-| Ruby | `voxgig-sdk-woody` | publish pending — [install from git tag](https://github.com/voxgig-sdk/woody-sdk/releases) |
-| Lua | `voxgig-sdk-woody` | publish pending — [install from git tag](https://github.com/voxgig-sdk/woody-sdk/releases) |
+| Ruby | `voxgig-sdk-woody` | publish pending — [install from git tag](https://github.com/voxgig-sdk/woody-sdk/tags) |
+| Lua | `voxgig-sdk-woody` | publish pending — [install from git tag](https://github.com/voxgig-sdk/woody-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/woody-sdk/go-cli` | `go install github.com/voxgig-sdk/woody-sdk/go-cli/cmd/woody@latest` |
 | Go MCP server | `github.com/voxgig-sdk/woody-sdk/go-mcp` | `go get github.com/voxgig-sdk/woody-sdk/go-mcp@latest` |
 
