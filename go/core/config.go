@@ -92,20 +92,23 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "id",
+						"title": "Id",
+						"type": "`$STRING`",
 						"short": "Unique identifier for the Woody",
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "permalink",
-						"short": "Permanent link to this Woody",
+						"title": "Permalink",
 						"type": "`$STRING`",
+						"short": "Permanent link to this Woody",
+						"format": "uri",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "url",
-						"short": "URL to the Woody image",
+						"title": "Url",
 						"type": "`$STRING`",
+						"short": "URL to the Woody image",
+						"format": "uri",
 					},
 				},
 				"id": map[string]any{
@@ -119,17 +122,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "id",
-											"orig": "id",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/{id}",
@@ -141,18 +133,30 @@ func MakeConfig() map[string]any {
 										"var": "id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"id",
-									},
+								"parts": []any{
+									"api",
+									"{id}",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"api",
-									"{id}",
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "id",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"id",
+									},
 								},
 							},
 						},
@@ -166,20 +170,23 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "id",
+						"title": "Id",
+						"type": "`$STRING`",
 						"short": "Unique identifier for the Woody",
-						"type": "`$STRING`",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "permalink",
-						"short": "Permanent link to this Woody",
+						"title": "Permalink",
 						"type": "`$STRING`",
+						"short": "Permanent link to this Woody",
+						"format": "uri",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "url",
-						"short": "URL to the Woody image",
+						"title": "Url",
 						"type": "`$STRING`",
+						"short": "URL to the Woody image",
+						"format": "uri",
 					},
 				},
 				"id": map[string]any{
@@ -193,7 +200,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/random",
@@ -205,15 +211,17 @@ func MakeConfig() map[string]any {
 										"lit": "random",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"api",
 									"random",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},

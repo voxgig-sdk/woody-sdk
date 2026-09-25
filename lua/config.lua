@@ -88,20 +88,23 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
             ["short"] = "Unique identifier for the Woody",
-            ["type"] = "`$STRING`",
           },
           {
-            ["format"] = "uri",
             ["name"] = "permalink",
-            ["short"] = "Permanent link to this Woody",
+            ["title"] = "Permalink",
             ["type"] = "`$STRING`",
+            ["short"] = "Permanent link to this Woody",
+            ["format"] = "uri",
           },
           {
-            ["format"] = "uri",
             ["name"] = "url",
-            ["short"] = "URL to the Woody image",
+            ["title"] = "Url",
             ["type"] = "`$STRING`",
+            ["short"] = "URL to the Woody image",
+            ["format"] = "uri",
           },
         },
         ["id"] = {
@@ -115,17 +118,6 @@ local function make_config()
             ["name"] = "load",
             ["points"] = {
               {
-                ["args"] = {
-                  ["params"] = {
-                    {
-                      ["kind"] = "param",
-                      ["name"] = "id",
-                      ["orig"] = "id",
-                      ["reqd"] = true,
-                      ["type"] = "`$STRING`",
-                    },
-                  },
-                },
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/{id}",
@@ -137,18 +129,30 @@ local function make_config()
                     ["var"] = "id",
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "id",
-                  },
+                ["parts"] = {
+                  "api",
+                  "{id}",
                 },
+                ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["parts"] = {
-                  "api",
-                  "{id}",
+                ["args"] = {
+                  ["params"] = {
+                    {
+                      ["name"] = "id",
+                      ["orig"] = "id",
+                      ["type"] = "`$STRING`",
+                      ["kind"] = "param",
+                      ["reqd"] = true,
+                    },
+                  },
+                },
+                ["select"] = {
+                  ["exist"] = {
+                    "id",
+                  },
                 },
               },
             },
@@ -162,20 +166,23 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "id",
+            ["title"] = "Id",
+            ["type"] = "`$STRING`",
             ["short"] = "Unique identifier for the Woody",
-            ["type"] = "`$STRING`",
           },
           {
-            ["format"] = "uri",
             ["name"] = "permalink",
-            ["short"] = "Permanent link to this Woody",
+            ["title"] = "Permalink",
             ["type"] = "`$STRING`",
+            ["short"] = "Permanent link to this Woody",
+            ["format"] = "uri",
           },
           {
-            ["format"] = "uri",
             ["name"] = "url",
-            ["short"] = "URL to the Woody image",
+            ["title"] = "Url",
             ["type"] = "`$STRING`",
+            ["short"] = "URL to the Woody image",
+            ["format"] = "uri",
           },
         },
         ["id"] = {
@@ -189,7 +196,6 @@ local function make_config()
             ["name"] = "load",
             ["points"] = {
               {
-                ["args"] = {},
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/api/random",
@@ -201,15 +207,17 @@ local function make_config()
                     ["lit"] = "random",
                   },
                 },
-                ["select"] = {},
-                ["transform"] = {
-                  ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
-                },
                 ["parts"] = {
                   "api",
                   "random",
                 },
+                ["rename"] = {},
+                ["transform"] = {
+                  ["req"] = "`reqdata`",
+                  ["res"] = "`body`",
+                },
+                ["args"] = {},
+                ["select"] = {},
               },
             },
           },

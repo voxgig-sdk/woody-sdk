@@ -1,0 +1,70 @@
+# Entity: random
+
+main: kit: entity: random: {
+
+  alias: field: {}
+
+  fields: {
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      sh: "Unique identifier for the Woody"
+      t: "`$STRING`"
+    }
+    permalink: {
+      fo: "uri"
+      h: "Permalink"
+      n: "permalink"
+      r: false
+      sh: "Permanent link to this Woody"
+      t: "`$STRING`"
+    }
+    url: {
+      fo: "uri"
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "URL to the Woody image"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "random"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /api/random"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/api/random"
+          s: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "random"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
